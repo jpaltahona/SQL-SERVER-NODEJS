@@ -82,7 +82,9 @@ body{
     font-weight: 200;
     font-family: sans-serif;
 }
-
+.primaryConten{
+    overflow: auto;
+}
 @media (min-width: 200px) and (max-width: 610px) {
     .sidebar{
         width: 100vh;
@@ -90,6 +92,16 @@ body{
         position: fixed;
         bottom: 0px;
         box-shadow: 0px -8px 8px -10px rgba(0,0,0,0.15);
+        z-index: 100;
+    
+    }
+    .carConten{
+        width: 48% !important;
+        margin: 3px !important;
+    }
+    .carConten .card-body{
+        padding: 10px;
+        font-size: 11px;
     }
     .sidebar .navegations{
         display: flex;
@@ -103,5 +115,12 @@ body{
         width: 56px;
         padding: 0px !important;
         margin-right: 11px;
+    }
+    .popform .popConten{
+        width: 90%;
+    }
+    .popform .popConten img{
+        width: 46%;
+        text-align: center;
     }
 }
