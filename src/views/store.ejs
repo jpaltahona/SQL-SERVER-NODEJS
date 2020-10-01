@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CRUD</title>
+    <%- include('partials/header') -%>
+</head>
+
+<body>
+    <script>
+        var producst = [];
+    </script>
+    <div class="row">
+        <div class="col-sm-2 mr-0">
+            <%- include('partials/navegation') -%>
+        </div>
+
+        <div class="col-sm-10 pt-5 conten">
+            <h1>Compra tus herramientas</h1>
+            <%  products.forEach(function(item){ %>
+                <div class="card float-left m-3" style="width: 19rem;">
+                    <img src="<%= item.IMAGE %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= item.NAME %></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <p class="card-text">Precio: <b><%= item.PRECIO %></b></p>
+                        <button class="btn btn-primary" onclick="comprarAction('<%= item.ID %>', '<%= item.NAME %>' ,'<%= item.IMAGE %>', '<%= item.PRECIO %>')">Comprar</button>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

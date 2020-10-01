@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CRUD</title>
+    <%- include('partials/header') -%>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center h-100vh">
+        <div class="card" style="width: 19rem;">
+            <div class="card-body">
+              <h5 class="card-title">Crear usuario</h5>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input type="text" class="form-control" placeholder="usuario" aria-label="Username" aria-describedby="basic-addon1" id="user">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">#</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1" id="pss">
+              </div>
+              <button class="btn btn-primary w-100" id="login-action">Iniciar</button>
+            </div>
+          </div>
+    </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

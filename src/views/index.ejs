@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CRUD</title>
+    <%- include('partials/header') -%>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-2 mr-0">
+            <%- include('partials/navegation') -%>
+        </div>
+
+        <div class="col-sm-10 pt-5 conten">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="shadow p-3 mb-3 bg-white rounded">
+                  <h4 class="title">
+                    total ordenes
+                  </h4>
+                  <h5 class="sub-title">Aquí veras todas las compras del mes</h5>
+                  <ul>
+                      <li id="state1">Pagadas: Cargando...</li>
+                      <li id="state2">Anuladas: Cargando...</li>
+                      <li id="total">Total: Cargando...</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-sm-2">
+                <div class="shadow p-3 mb-3 bg-white rounded">
+                  <h4 class="title">
+                    Generar reporte
+                  </h4>
+                  <h5 class="sub-title">Aqui puedes generar un reporte de las ventas</h5>
+                  <button class="btn btn-primary w-100" >Generar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-100 bg-white shadow-sm p-3 pt-4 mt-5 bg-white rounded">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Pedido</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Cliente</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <% list.forEach(function(item){ %>
+
+                    <tr>
+                    <th scope="row"><%= item.ID %></th>
+                    <td><%= item.FECHA_HORA %></td>
+                    <td><%= item.NAME %> <%= item.APELLIDO %></td>
+                    <td><%= item.VALOR_UND%></td>
+                    <td>
+                      <% if(item.ESTADO == "1"){ %>
+                          Pagada
+                      <% } else{ %>
+                          Anulada
+                     <% } %>
+                    </td>
+                  </tr>
+                  <% }); %>
+               
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
